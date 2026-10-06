@@ -1,0 +1,146 @@
+@use "./../abstracts/" as *; 
+nav.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition-duration: 0.5s;
+    @include respond(350)
+    {
+        padding: 10px 20px;
+    }
+    .navbar-toggler
+    {
+            width: 45px;
+            height: 30px;
+
+        @include respond(350)
+        {
+            &:focus 
+            {
+                box-shadow: none;
+            }
+            &[aria-expanded="true"]
+            {
+                border: 1px solid $firstColor;
+            }
+        }
+        @include respond(450)
+        {
+            width: 50px;
+            height: 35px;
+        }
+        .navbar-toggler-icon
+        {
+            width: 90%;
+        }
+
+    }
+    .navbar-collapse
+    {
+        @include respond(350)
+        {
+            background-color: rgba(0,0,0,0.8);
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            top: 100%;
+            max-width: 400px;
+            width: 90%;
+            left: 50%;
+            transform: translate(-50%,10px);
+        }
+        @include respond(650)
+        {
+            max-width: 500px;
+            width: 100%;
+        }
+        @include respond(1050)
+        {
+            transform: translate(0, 0);
+            position: static;
+            width: auto;
+            max-width: 100%;
+            background-color: transparent;
+        }
+        
+    }
+    .navbar-brand 
+    {
+        width: 12%;
+        transition-duration: 0.5s;
+        @include respond(350)
+        {
+            width: 20%;
+        }
+        @include respond(450){
+
+            width: 18%;
+        }
+        @include respond(1050){
+
+            width: 15%;
+        }
+
+    }
+    .nav-link
+    {
+        color: $firstColor;
+        font-weight: 600;
+        position: relative;
+        padding: 0;
+
+        &.active   //^ It's mean the previous parent with active (.nav-link.active)
+        {
+            color: $firstColor;
+
+            &::after 
+                {
+                    width: 100%;
+
+                }
+        }
+        &::after 
+        {
+            @include createEle($w : 0% ,$h : 2px); //@ use include to add element from mixin
+            background-color: $secondColor;
+            transform: translate(-50%,5px);
+            transition-duration: .5s;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+        }
+        &:hover::after 
+        {
+            width: 100%;
+
+        }
+
+        @include respond (350)
+        {
+            width: fit-content;
+            margin: auto;
+        }
+
+        @include respond (1050)
+        {
+            font-size: 13px;
+        }
+    }
+   &.scrolled {
+    background-color: $whiteColor;
+    .navbar-brand 
+    {
+        width: 9%;
+
+        @include respond(350)
+        {
+            width: 15%;
+        }
+    }
+   }
+
+
+}

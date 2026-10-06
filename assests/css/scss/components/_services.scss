@@ -1,0 +1,137 @@
+@use "./../abstracts" as * ;
+#Services 
+{
+   
+   .part1 
+   {
+        
+        .part
+        { 
+            transition-duration: 0.5s;
+            padding: 25px 20px;
+            border-radius: 10px;
+            margin: auto;
+            width: 45%;
+            transform: translateY(0);
+            max-width: 450px;
+            @include respond(350)
+            {
+                width: 90%;
+            }
+            @include respond(850)
+            {
+                width: 45%;
+            }
+            &:hover 
+            {
+                background-color: $whiteColor;
+                box-shadow: 0 20px 50px #00000080;
+                transform: translateY(-5px);
+            }
+            img 
+            {
+                width: 50px;
+            }
+
+            p 
+            {
+                width: 75%;
+                margin: auto;
+
+                @include respond(350)
+                {
+                        width: 90%;
+                }
+            }
+        } 
+   }
+   .part2 
+   {
+    .title 
+    {
+        h2 
+        {
+            color: $whiteColor;
+            font-size: 40px;
+        }
+        &::after 
+        {
+            background-color: $whiteColor;
+        }
+    }
+        background-image:url('../images_L10/images/video-bg.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        min-height: 300px;
+        position: relative;
+        @include flex();
+        z-index: 3;
+        &::before 
+        {
+            @include createEle();
+            background-image: radial-gradient(#68b703, #305d00);
+            @include position ($t : 0 , $l : 0);
+            opacity: 0.8;
+            z-index: -1;
+        }
+         .container 
+         {
+            position: relative;
+         }
+        .controller
+        {
+          @include flex($ai : flex-end);
+          height: 100px;
+
+            i 
+            {
+                color: $whiteColor;
+                font-size: 60px;
+                cursor: pointer;
+                transform: scale(1);
+                transition-duration: 0.5s;
+                &:hover 
+                {
+                    transform: scale(1.25);
+                }
+            }
+        }
+   }
+    
+}
+
+.modal.fade
+  {
+    background-color: transparent;
+  
+
+     .modal-dialog 
+     {
+        max-width: 800px;
+        @include distance($h : 400px);
+        .modal-content {
+                display: flex;
+                align-items: center; 
+                flex-direction: column;
+                justify-content: center;
+                @include distance();
+                border-radius: 10px;
+                background-color: transparent;
+                border: none;
+            iframe 
+            {
+                max-width: 800px;
+                @include distance(90% , 400px);
+                border-radius: 10px;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%,50%);
+               
+
+            }    
+        }
+     }
+  }

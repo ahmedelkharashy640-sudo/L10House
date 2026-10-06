@@ -1,0 +1,221 @@
+@use "./variable" as *;
+@use "./mixins" as *;
+body {
+  background: #8e9eab;
+  background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
+  background: linear-gradient(to right, #eef2f3, #8e9eab);
+  color: #000;
+  overflow-x: hidden;
+}
+
+p {
+  color: #555;
+}
+.firstColor {
+  color: $firstColor;
+}
+.secondColor {
+  color: $secondColor;
+}
+
+.title {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+  h2 {
+    color: $secondColor;
+    font-size: 35px;
+  }
+  &::after {
+    @include createEle(50%, 3px);
+    background-color: $secondColor;
+    //     margin: auto;
+    @include position($l: 50%, $b: -10px);
+    transform: translateX(-50%);
+    border-radius: 10px;
+    transition-duration: 0.5s;
+  }
+}
+section:not(#Language_Sectors) {
+  &:hover {
+    .title {
+      &::after {
+        width: 80%;
+      }
+    }
+  }
+}
+
+
+
+#Language_Sectors {
+
+    .part1
+    {
+        h2 
+        {
+            color: $whiteColor;
+           
+        }
+         .title 
+         {
+             &::after {
+                   background-color: $whiteColor; 
+                   width: 30%;
+            }
+         }
+        &:hover {
+            .title {
+            &::after {
+                width: 60%;
+                background-color: $whiteColor;
+            }
+            }
+        }
+    }
+    .part2 
+    {
+        &:hover {
+            .title {
+            &::after {
+                width: 80%;
+            }
+            }
+        }
+    }
+  
+}
+
+
+.popup {
+  @include position($p: fixed, $t: 0, $l: 0, $z: 1000);
+  overflow-y: scroll;
+  @include distance(100%, 100%);
+  display: none;
+
+  .box {
+    width: 70%;
+    background-color: $whiteColor;
+    margin: 50px auto;
+    font-size: 14px;
+    .head {
+      position: relative;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+      i {
+        @include position($t: 10px, $r: 10px);
+      }
+    }
+    .body {
+      .row {
+        .part1 {
+          p {
+            line-height: 2.5rem;
+            font-size: 18px;
+          }
+        }
+        .part2 {
+          @include flex();
+          img {
+            width: 100%;
+            max-width: 550px;
+          }
+        }
+      }
+    }
+    section {
+      h6 {
+        font-size: 17px;
+        color: #000;
+        margin-bottom: 10px;
+      }
+      ol {
+        li {
+          &::marker {
+            color: $secondColor;
+            font-weight: 500;
+          }
+          color: #000;
+        }
+      }
+    }
+  }
+
+  &[data-popup-name = "sector"]
+  {
+    .item 
+    {
+        background-color: #ebfbee;
+        img 
+        {
+            width: 75px;
+        }
+        p 
+        {
+            background-color: #dfeee2;
+        }
+    }
+  }
+
+
+
+  &[data-popup-name = "languages"]
+  {
+    &::before 
+    {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+
+    }
+        .box 
+        {
+            margin: auto;
+            border-radius: 10px 0px 0px 10px;
+            @include position($t : 0 , $r : 0);
+            max-width: 400px;
+            transform: translateX(100%);
+            transition-duration: 0.5s;
+             > i {  
+                    @include position($t: 10px, $r: 10px);
+                    font-size: 14px;
+                }
+
+
+            .section:nth-of-type(odd) 
+            {
+                h5 
+                {
+                    color : $firstColor;
+                }
+                i
+                {
+                    color : $firstColor;
+                }
+            }    
+            .section:nth-of-type(even) 
+            {
+                h5 
+                {
+                    color : $secondColor;
+                }
+
+                i 
+                {
+                    color : $secondColor;
+                }
+            }   
+            
+            &.show 
+            {
+                transform: translateX(0%);
+            }
+        }
+  }
+
+    
+}

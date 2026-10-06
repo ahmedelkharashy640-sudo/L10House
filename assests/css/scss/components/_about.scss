@@ -1,0 +1,95 @@
+@use "./../abstracts" as * ;
+
+#About 
+{
+    background-color: $whiteColor;
+     p 
+     {
+      font-size: 17px;
+     }
+    @include respond(350)
+    {
+       p 
+       {
+         font-size: 15px;
+       }
+    }
+    @include respond(450)
+    {
+      .part1 
+      {
+        .item 
+        {
+            @include flex();
+            img 
+            {
+                max-width: 400px;
+                width: 90%;
+            }
+        }
+      }
+       p 
+       {
+         font-size: 15px;
+         width: 90%;
+         margin: auto;
+         letter-spacing: 1.2px;
+       }
+    }
+    @include respond(650)
+    {
+      .part1 
+      {
+        .item 
+        {
+            @include flex();
+            img 
+            {
+                max-width: 550px;
+                width: 90%;
+            }
+        }
+      }
+       
+    }
+    @include respond(850)
+    {
+      p 
+      {
+        width: 75%;
+      }
+       
+    }
+    @include respond(850)
+    {
+        .part1 
+        {
+            .item 
+            {
+                @include flex();
+                img 
+                {
+                    max-width: 550px;
+                    width: 100%;
+                }
+            }
+        }
+
+      p 
+      {
+        width: 95%;
+
+      }
+       
+    }
+    @include respond(1050)
+    {
+       
+      p 
+      {
+        width: 95%;
+        font-size: 12px;
+      }
+       
+    }
+}
