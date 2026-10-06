@@ -970,7 +970,17 @@ nav.navbar.scrolled .navbar-brand {
   height: 100%;
 }
 #Contact .container-fluid .content {
-  width: 100%;
+  width: 98%;
+  /*350*/
+}
+@media (max-width: 1300px) {
+  #Contact .container-fluid .content {
+    width: 95%;
+  }
+}
+#Contact .container-fluid .row {
+  display: flex;
+  justify-content: center;
 }
 #Contact .container-fluid .row .part {
   margin: auto;
@@ -979,6 +989,7 @@ nav.navbar.scrolled .navbar-brand {
 @media (max-width: 1300px) {
   #Contact .container-fluid .row .part {
     max-width: 350px;
+    width: 90%;
   }
 }
 #Contact .container-fluid .row .part {
@@ -986,7 +997,7 @@ nav.navbar.scrolled .navbar-brand {
 }
 @media (min-width: 577px) and (max-width: 1300px) {
   #Contact .container-fluid .row .part {
-    max-width: 350px;
+    max-width: 400px;
   }
 }
 #Contact .container-fluid .row .part {
@@ -1100,6 +1111,12 @@ nav.navbar.scrolled .navbar-brand {
 }
 #Contact .container-fluid .head .form-group {
   width: 50%;
+  /*350*/
+}
+@media (max-width: 1300px) {
+  #Contact .container-fluid .head .form-group {
+    width: 100%;
+  }
 }
 #Contact .container-fluid .head input {
   width: 100%;
@@ -1127,6 +1144,7 @@ nav.navbar.scrolled .navbar-brand {
   right: 0;
   transform: translateX(100%);
   transition-duration: 0.5s;
+  z-index: 4000;
 }
 #arrowTop.show {
   transform: translateX(60%);
