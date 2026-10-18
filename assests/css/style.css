@@ -286,6 +286,7 @@ nav.navbar .navbar-toggler .navbar-toggler-icon {
   width: 90%;
 }
 nav.navbar .navbar-collapse {
+  transform: translateX(15%);
   /*350*/
 }
 @media (max-width: 1300px) {
