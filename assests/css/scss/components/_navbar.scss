@@ -130,7 +130,8 @@ nav.navbar {
         }
     }
    &.scrolled {
-    background-color: $whiteColor;
+    background: -webkit-linear-gradient(to right, #ecedee, #d2d8dd);
+    background: linear-gradient(to right, #f4fcfc, #d8d2d2);
     .navbar-brand 
     {
         width: 9%;

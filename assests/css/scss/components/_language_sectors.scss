@@ -94,6 +94,12 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: $secondColor;
+    background-color: rgba(226, 101, 9,0.5);
    }
+   .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot.active 
+   {
+    background-color: rgba(226, 101, 9);
+
+   } 
+
 }
