@@ -8,22 +8,7 @@
      {
       font-size: 17px;
      }
-      .part1 
-      {
-        .item 
-        {
-            img 
-            {
-                transform: scale(0.9);
-                transition-duration: 0.5s;
-                cursor: pointer;
-                &:hover 
-                {
-                  transform: scale(1);
-                }
-            }
-        }
-      }
+      
     @include respond(350)
     {
        p 

@@ -496,11 +496,6 @@ nav.navbar.scrolled .navbar-brand {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-}
-#Home .part2 .item {
-  animation: animate5 2s linear infinite alternate;
-}
-#Home .part2 {
   /*350*/
 }
 @media (max-width: 1300px) {
@@ -513,7 +508,6 @@ nav.navbar.scrolled .navbar-brand {
   #Home .part2 .item img {
     max-width: 450px;
     width: 70%;
-    animation: animate5 2s infinite alternate;
   }
 }
 #Home .part2 {
@@ -596,14 +590,6 @@ nav.navbar.scrolled .navbar-brand {
 }
 #About p {
   font-size: 17px;
-}
-#About .part1 .item img {
-  transform: scale(0.9);
-  transition-duration: 0.5s;
-  cursor: pointer;
-}
-#About .part1 .item img:hover {
-  transform: scale(1);
 }
 #About {
   /*350*/
